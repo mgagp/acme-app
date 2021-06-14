@@ -169,7 +169,8 @@ then
   live_pid $pid
   if [ $? -eq 0 ]
   then
-    curl -X POST $url/actuator/shutdown >/dev/null 2>&1
+    #curl -X POST $url/actuator/shutdown >/dev/null 2>&1
+    kill $pid
   else
     echo "stopped"
     exit 0

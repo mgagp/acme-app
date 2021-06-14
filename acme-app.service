@@ -1,0 +1,13 @@
+[Unit]
+Description=A Spring Boot application
+After=network.target
+
+[Service]
+User=centos
+Type=forking
+WorkingDirectory=/home/centos
+ExecStart=/home/centos/acme-app.jar start
+ExecStop=/home/centos/acme-app.jar stop 5
+
+[Install]
+WantedBy=multi-user.target
